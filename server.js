@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
  //all data convert to object and store to req.body
 
-const port=process.env.PORT||8008;
+const port=process.env.PORT||8009;
 
 const Person=require('./models/person');
 app.get("/",function(req,res){
@@ -74,7 +74,7 @@ app.use("/person",personRoutes);
 
 
 
-
+const PORT=8008;
 app.listen(PORT, () => {
     console.log('Server is running on port');
 });
