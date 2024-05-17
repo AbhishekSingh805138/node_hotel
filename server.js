@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 const db=require("./db");
+require("dotenv").config();
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.json()); //all data convert to object and store to req.body
+app.use(bodyParser.json());
+ //all data convert to object and store to req.body
 
+const port=process.env.PORT||8008;
 
 const Person=require('./models/person');
 app.get("/",function(req,res){
@@ -71,7 +74,7 @@ app.use("/person",personRoutes);
 
 
 
-const PORT =8005; 
+
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log('Server is running on port');
 });
